@@ -1,1 +1,1 @@
-x86_64 Intel Sytax Assembly
+x86_64 Intel Syntax Assembly for Linux
