@@ -1,13 +1,13 @@
 ; add.asm
 section .data
   prompt1 db 'Enter the first number (0-9): ', 0xa ; Prompt for the first number
-  firstPromptLen equ $ - prompt1 ; Length of prompt1
+  firstPromptLength equ $ - prompt1 ; Length of prompt1
 
   prompt2 db 'Enter the second number (0-9): ', 0xa ; Prompt for the second number
-  secondPromptLen equ $ - prompt2 ; Length of prompt2
+  secondPromptLength equ $ - prompt2 ; Length of prompt2
 
   resultMessage db 'The sum is: ' ; The result message
-  resultMessageLen equ $ - resultMessage ; Length of the result message
+  resultMessageLength equ $ - resultMessage ; Length of the result message
 
   newline db 0xa ; Newline character
 
@@ -24,7 +24,7 @@ _start:
   mov rax, 1 ; syscall for sys_write
   mov rdi, 1 ; stdout
   mov rsi, prompt1 ; message to write
-  mov rdx, firstPromptLen ; message length
+  mov rdx, firstPromptLength ; message length
   syscall
 
   mov rax, 0 ; syscall for sys_read
@@ -37,7 +37,7 @@ _start:
   mov rax, 1 ; sys_write
   mov rdi, 1 ; stdout
   mov rsi, prompt2 ; message to write
-  mov rdx, secondPromptLen ; message length
+  mov rdx, secondPromptLength ; message length
   syscall
 
   mov rax, 0 ; sys_read
@@ -63,7 +63,7 @@ _start:
   mov rax, 1 ; sys_write
   mov rdi, 1 ; stdout
   mov rsi, resultMessage ; message to write
-  mov rdx, resultMessageLen ; message length
+  mov rdx, resultMessageLength ; message length
   syscall
 
   mov rax, 1 ; sys_write

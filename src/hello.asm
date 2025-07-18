@@ -1,7 +1,7 @@
 ; hello.asm
 section .data
   message db 'Hello, World!', 0x0a ; Define the message string,  0x0a == /n
-  length equ $ - message ; Calculate the length of the message
+  length equ $ - message ; Calculate the length of the message == 14
 
 section .text
   global _start ; Make the _start label visible to the linker
